@@ -1,0 +1,9 @@
+name: logstash
+mem: 512M
+framework:
+  type: php
+  document-root: kibana
+command: java -jar logstash-1.1.13-flatjar.jar agent -f logstash.conf
+hooks:
+  pre-staging:
+    - python run.py
